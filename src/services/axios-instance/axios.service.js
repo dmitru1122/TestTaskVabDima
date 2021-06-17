@@ -9,7 +9,7 @@ axios.interceptors.response.use(
     return response;
   },
   (err) => {
-    const { data } = err.response;
+    const data = err?.response?.data;
     const message = data && data.message ? data.message : 'Unhandled server error!';
 
     throw new Error(`${message}`);

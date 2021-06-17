@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import fieldService from '../../services/field/field.service';
+import fieldService from '../../../services/field/field.service';
 
 import './HomePage.scss';
 
@@ -112,7 +112,7 @@ function Home() {
       <div className='home__output-block'>
         <div className='grid-block'>{fieldTemplate && isShowFields ? renderFieldTepmlate : <></>}</div>
         <div className='info-block'>
-          {activeFields ? activeFields.map((item) => <div key={item}>{item}</div>) : <>nothig</>}
+          {activeFields ? activeFields.map((item) => <div key={item}>row: column - {item}</div>) : <>nothig</>}
         </div>
       </div>
     </div>
