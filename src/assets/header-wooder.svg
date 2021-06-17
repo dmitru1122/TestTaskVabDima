@@ -1,0 +1,10 @@
+<svg version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 4" width="64" height="4">
+	<title>Header</title>
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: #bea67c } 
+	</style>
+	<g id="Header">
+		<path id="Прямоугольник 17" class="shp0" d="M0 0L64 0L64 4L0 4L0 0Z" />
+	</g>
+</svg>

@@ -1,0 +1,20 @@
+@import "../../../theme/variables.scss";
+.footer {
+  margin-top: 5 * $basic-margin;
+  background-color: $ui-black;
+  width: 100%;
+  min-height: 20 * $basic-margin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__title {
+    opacity: 0.2;
+    font-family: revert;
+    font-size: 6 * $basic-margin;
+    font-size: 10vw;
+    left: 10%;
+    bottom: 0px;
+    z-index: 1;
+  }
+}
