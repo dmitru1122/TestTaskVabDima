@@ -22,7 +22,6 @@ function Home() {
     if (activeFields.includes(name)) {
       const index = activeFields.indexOf(name);
       activeFields.splice(index, 1);
-
       target.className = 'item';
       return;
     }
@@ -32,6 +31,14 @@ function Home() {
     setActiveFields(returnArray);
   };
 
+  const clickChangeMode = () => {
+    SetIsShowFields(true);
+    if (selectedMode === currentMode) return;
+    setActiveFields([]);
+    // forse rerender, Deleted highlighted items from previous mode.
+    setFieldTemplate([]);
+    setCurrentMode(selectedMode);
+  };
   const parseField = () => {
     if (field[currentMode]) {
       const resultArr = [];
@@ -46,17 +53,6 @@ function Home() {
       setFieldTemplate(resultArr);
     }
   };
-  const clickChangeMode = () => {
-    SetIsShowFields(true);
-    if (selectedMode === currentMode) return;
-    setActiveFields([]);
-    setFieldTemplate([]);
-    setCurrentMode(selectedMode);
-  };
-
-  useEffect(() => {
-    parseField();
-  }, [currentMode]);
   const getField = async () => {
     try {
       const response = await fieldService();
@@ -66,6 +62,10 @@ function Home() {
       console.error('Error request: ', error);
     }
   };
+
+  useEffect(() => {
+    parseField();
+  }, [currentMode]);
 
   useEffect(() => {
     getField();
@@ -87,7 +87,7 @@ function Home() {
     </div>
   ));
   return (
-    <div className='home'>
+    <main className='home'>
       <div className='home__setting-block'>
         <select defaultValue='DEFAULT' onChange={handleSelectMode}>
           {field ? (
@@ -105,6 +105,7 @@ function Home() {
             <option value='normalMode'>Loading</option>
           )}
         </select>
+        {/* i can put button in new folder for reusable, but it is too small project */}
         <button type='button' onClick={clickChangeMode}>
           start
         </button>
@@ -115,7 +116,7 @@ function Home() {
           {activeFields ? activeFields.map((item) => <div key={item}>row: column - {item}</div>) : <>nothig</>}
         </div>
       </div>
-    </div>
+    </main>
   );
 }
 
