@@ -106,7 +106,7 @@ function Home() {
             <option value='normalMode'>Loading</option>
           )}
         </select>
-        {/* i can put button in new folder for reusable, but it is too small project */}
+        {/* i can put button into a new folder for reusable, but it is too litle project */}
         <button type='button' onClick={clickChangeMode}>
           start
         </button>
