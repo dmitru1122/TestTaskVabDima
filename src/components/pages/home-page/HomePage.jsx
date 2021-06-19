@@ -79,6 +79,7 @@ function Home() {
           key={item}
           onMouseOver={handleMouseOver}
           onFocus={handleMouseOver}
+          onClick={handleMouseOver}
           className={`item `}
           value=''
           name={`${Object.keys(row)[0]} : ${item}`}
